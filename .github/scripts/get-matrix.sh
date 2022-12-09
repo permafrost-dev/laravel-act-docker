@@ -1,16 +1,11 @@
-platforms=(linux/386 linux/amd64 linux/arm/v7 linux/arm64 multi)
-tags=('latest' 'jammy,2204' 'focal,2004' 'bionic,1804' 'latest-slim' 'jammy-slim,2204-slim' 'focal-slim,2004-slim' 'bionic-slim,1804-slim')
+platforms=(linux/amd64 linux/arm/v7 linux/arm64 multi)
+tags=('latest' 'jammy,2204' 'focal,2004' 'latest-slim' 'jammy-slim,2204-slim' 'focal-slim,2004-slim')
 matrix=()
 for platform in "${platforms[@]}"; do
   for tag in "${tags[@]}"; do
     if [[ "$tag" =~ latest ]]; then
-      if [ "$platform" = "linux/386" ]; then
-        base="ubuntu:18.04"
-        file="bionic"
-      else
-        base="ubuntu:20.04"
-        file="focal"
-      fi
+      base="ubuntu:20.04"
+      file="focal"
     elif [[ "$tag" =~ jammy ]]; then
       if [ "$platform" = "linux/386" ]; then
         continue
@@ -23,9 +18,6 @@ for platform in "${platforms[@]}"; do
       fi
       base="ubuntu:20.04"
       file="focal"
-    elif [[ "$tag" =~ bionic ]]; then
-      base="ubuntu:18.04"
-      file="bionic"
     fi
     if [[ "$tag" =~ slim ]]; then
       build_args="type=slim"
