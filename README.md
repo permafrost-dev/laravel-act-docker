@@ -7,26 +7,26 @@ Docker images for use with [`nektos/act`](https://github.com/nektos/act) when ru
 
 To use this image with `act`, run a command similar to the following:
 
-```bash
+```text
 act -P ubuntu-latest=permafrostsoftware/laravel-node:latest -W .github/workflows/run-tests.yml
 ```
 
 ## Namespaces
 
-- https://hub.docker.com/r/permafrostsoftware/laravel-node
+`permafrostsoftware/laravel-node` - [View on DockerHub](https://hub.docker.com/r/permafrostsoftware/laravel-node/tags)
 
 ## Platforms/OS Architecture
 
 - `linux/amd64` or `amd64`
-- `linux/arm/v7` or `arm32v7`
 - `linux/arm64` or `arm64v8`
 
 ## Image Variants/Tags
 
 ### `latest`
 
-- Ubuntu 20.04 (focal)
+- Ubuntu 22.04 (focal)
 - PHP 7.2 to PHP 8.2
+- PHP extensions: `bcmath`, `curl`, `dom`, `fileinfo`, `gd`, `iconv`, `intl`, `json`, `mbstring`, `mysql`, `pdo`, `pdo_mysql`, `pdo_sqlite`, `sqlite3`, `xml`, `zip`, `xdebug`
 - Node.js 16.18.1
 - Yarn 1.22.19
 
@@ -34,6 +34,7 @@ act -P ubuntu-latest=permafrostsoftware/laravel-node:latest -W .github/workflows
 
 - Ubuntu 22.04 (jammy)
 - PHP 7.2 to PHP 8.2
+- PHP extensions: `bcmath`, `curl`, `dom`, `fileinfo`, `gd`, `iconv`, `intl`, `json`, `mbstring`, `mysql`, `pdo`, `pdo_mysql`, `pdo_sqlite`, `sqlite3`, `xml`, `zip`, `xdebug`
 - Node.js 16.18.1
 - Yarn 1.22.19
 
@@ -41,30 +42,13 @@ act -P ubuntu-latest=permafrostsoftware/laravel-node:latest -W .github/workflows
 
 - Ubuntu 20.04 (focal)
 - PHP 7.2 to PHP 8.2
-- Node.js 16.18.1
-- Yarn 1.22.19
-
-### `latest-slim`
-
-- Ubuntu 20.04 (focal), Ubuntu 18.04 (bionic) on i386
-- Node.js 16.18.1
-- Yarn 1.22.19
-
-### `jammy-slim`, `2204-slim`
-
-- Ubuntu 22.04 (jammy)
-- Node.js 16.18.1
-- Yarn 1.22.19
-
-### `focal-slim`, `2004-slim`
-
-- Ubuntu 20.04 (focal)
+- PHP extensions: `bcmath`, `curl`, `dom`, `fileinfo`, `gd`, `iconv`, `intl`, `json`, `mbstring`, `mysql`, `pdo`, `pdo_mysql`, `pdo_sqlite`, `sqlite3`, `xml`, `zip`, `xdebug`
 - Node.js 16.18.1
 - Yarn 1.22.19
 
 ## Platform/OS Architecture specific tags
 
-- Suffix `amd64`, `arm32v7` `arm64v8` to above image variants to get image for specific OS architecture.
+- Suffix `amd64`, `arm64v8` to above image variants to get image for specific OS architecture.
 For example `permafrostsoftware/laravel-node:focal-arm64v8`
 
 ## License
