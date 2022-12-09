@@ -1,20 +1,18 @@
-# node-docker 
-## `shivammathur/node` and `setupphp/node`
+# laravel-act-docker 
+## `permafrostsoftware/laravel-node`
 
-<a href="https://github.com/shivammathur/node-docker" title="Docker images to run setup-php GitHub Action"><img alt="Build status" src="https://github.com/shivammathur/node-docker/workflows/Build/badge.svg"></a>
-<a href="https://github.com/shivammathur/node-docker/blob/main/LICENSE" title="license"><img alt="LICENSE" src="https://img.shields.io/badge/license-MIT-428f7e.svg"></a>
+<img alt="Build status" src="https://github.com/permafrost-dev/laravel-act-docker/workflows/Build/badge.svg" />
+<img alt="LICENSE" src="https://img.shields.io/badge/license-MIT-428f7e.svg" />
 
-Docker images to run setup-php GitHub Action.
+Docker images to use with `act` when running workflows for Laravel packages and projects.
 
 ## Namespaces
 
-- https://hub.docker.com/r/shivammathur/node
-- https://hub.docker.com/r/setupphp/node (No rate limits)
+- https://hub.docker.com/r/permafrostsoftware/laravel-node
 
 ## Platforms/OS Architecture
 
 - `linux/amd64` or `amd64`
-- `linux/386` or `i386`
 - `linux/arm/v7` or `arm32v7`
 - `linux/arm64` or `arm64v8`
 
@@ -22,29 +20,22 @@ Docker images to run setup-php GitHub Action.
 
 ### `latest`
 
-- Ubuntu 20.04 (focal), Ubuntu 18.04 (bionic) on i386
-- PHP 5.6 to PHP 8.1
+- Ubuntu 20.04 (focal)
+- PHP 7.2 to PHP 8.2
 - Node.js 16.18.1
 - Yarn 1.22.19
 
 ### `jammy`, `2204`
 
 - Ubuntu 22.04 (jammy)
-- PHP 5.6 to PHP 8.1
+- PHP 7.2 to PHP 8.2
 - Node.js 16.18.1
 - Yarn 1.22.19
 
 ### `focal`, `2004`
 
 - Ubuntu 20.04 (focal)
-- PHP 5.6 to PHP 8.1
-- Node.js 16.18.1
-- Yarn 1.22.19
-
-### `bionic`, `1804`
-
-- Ubuntu 18.04 (bionic)
-- PHP 5.6 to PHP 8.1
+- PHP 7.2 to PHP 8.2
 - Node.js 16.18.1
 - Yarn 1.22.19
 
@@ -66,19 +57,10 @@ Docker images to run setup-php GitHub Action.
 - Node.js 16.18.1
 - Yarn 1.22.19
 
-### `bionic-slim`, `1804-slim`
-
-- Ubuntu 18.04 (bionic)
-- Node.js 16.18.1
-- Yarn 1.22.19
-
 ## Platform/OS Architecture specific tags
 
-- Suffix `amd64`, `i386`, `arm32v7` `arm64v8` to above image variants to get image for specific OS architecture.
-For example `shivammathur/node:bionic-arm64v8`, `setupphp/node:bionic-arm64v8`
-
-- `i386` is not available for Ubuntu 20.04 (focal) and newer.
-- `i386` latest and latest-slim images are based on Ubuntu 18.04 (bionic).
+- Suffix `amd64`, `arm32v7` `arm64v8` to above image variants to get image for specific OS architecture.
+For example `permafrostsoftware/laravel-node:focal-arm64v8`
 
 ## License
 
