@@ -6,9 +6,9 @@ case $platform in
   arm/v7) platform='arm32v7' ;;
 esac
 
-tags=$(echo "${TAGS:?}" | awk 'BEGIN{FS=OFS=","} NR==1{for (i=1;i<=NF;i++) $i="shivammathur/node:"$i} 1')
+tags=$(echo "${TAGS:?}" | awk 'BEGIN{FS=OFS=","} NR==1{for (i=1;i<=NF;i++) $i="permafrostsoftware/laravel-node:"$i} 1')
 orgtags=$(echo "$TAGS" | awk 'BEGIN{FS=OFS=","} NR==1{for (i=1;i<=NF;i++) $i="setupphp/node:"$i} 1')
-ptags=$(echo "$TAGS" | awk -v platform="$platform" 'BEGIN{FS=OFS=","} NR==1{for (i=1;i<=NF;i++) $i="shivammathur/node:"$i"-"platform} 1')
+ptags=$(echo "$TAGS" | awk -v platform="$platform" 'BEGIN{FS=OFS=","} NR==1{for (i=1;i<=NF;i++) $i="permafrostsoftware/laravel-node:"$i"-"platform} 1')
 orgptags=$(echo "$TAGS" | awk -v platform="$platform" 'BEGIN{FS=OFS=","} NR==1{for (i=1;i<=NF;i++) $i="setupphp/node:"$i"-"platform} 1')
 key=$(echo -n "$tags $ptags" | openssl dgst -sha256 | cut -d ' ' -f 2)
 
