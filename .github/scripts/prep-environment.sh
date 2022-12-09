@@ -14,7 +14,7 @@ key=$(echo -n "$tags $ptags" | openssl dgst -sha256 | cut -d ' ' -f 2)
 
 multi='linux/amd64,linux/arm/v7,linux/arm64'
 
-echo ::set-output name=tags::${tags},${orgtags}
-echo ::set-output name=ptags::${ptags},$orgptags
+echo ::set-output name=tags::${tags}
+echo ::set-output name=ptags::${ptags}
 echo ::set-output name=key::${key}
 echo ::set-output name=multi::${multi}
