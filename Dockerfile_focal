@@ -97,7 +97,7 @@ RUN if [ "$type" = "full" ]; then set -ex \
             php8.2-sqlite3 \
             php8.2-xml \
             php8.2-zip; \
-      && for v in 7.2 7.3 7.4 8.0 8.1; do \
+      for v in 7.2 7.3 7.4 8.0 8.1; do \
            apt-get install -y --no-install-recommends php"$v" \
            php"$v"-bcmath \
            php"$v"-curl \
@@ -114,7 +114,7 @@ RUN if [ "$type" = "full" ]; then set -ex \
            php"$v"-xml \
            php"$v"-zip; \
          done \
-      curl -o /usr/bin/systemctl -sL https://raw.githubusercontent.com/permafrost-dev/laravel-act-docker/main/systemctl-shim \
+      && curl -o /usr/bin/systemctl -sL https://raw.githubusercontent.com/permafrost-dev/laravel-act-docker/main/systemctl-shim \
       && chmod a+x /usr/bin/systemctl \
       && curl -o /usr/lib/ssl/cert.pem -sL https://curl.se/ca/cacert.pem \
       && curl -o /tmp/pear.phar -sL https://raw.githubusercontent.com/pear/pearweb_phars/master/install-pear-nozlib.phar \
