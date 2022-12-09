@@ -11,6 +11,9 @@ To use this image with `act`, run a command similar to the following:
 act -P ubuntu-latest=permafrostsoftware/laravel-node:latest -W .github/workflows/run-tests.yml
 ```
 
+![image](https://user-images.githubusercontent.com/5508707/206807184-7e0c4dcb-f0b9-4acb-b16d-004c28865c1e.png)
+
+
 ## Namespaces
 
 `permafrostsoftware/laravel-node` - [View on DockerHub](https://hub.docker.com/r/permafrostsoftware/laravel-node/tags)
