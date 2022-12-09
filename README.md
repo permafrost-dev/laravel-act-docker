@@ -1,7 +1,7 @@
 # laravel-act-docker 
 ## `permafrostsoftware/laravel-node`
 
-<img alt="Build status" src="https://github.com/permafrost-dev/laravel-act-docker/workflows/Build/badge.svg" />
+<img alt="Build status" src="https://github.com/permafrost-dev/laravel-act-docker/actions/workflows/ci.yml/badge.svg" />
 <img alt="LICENSE" src="https://img.shields.io/badge/license-MIT-428f7e.svg" />
 
 Docker images to use with `act` when running workflows for Laravel packages and projects.
