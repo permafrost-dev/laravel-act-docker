@@ -28,3 +28,4 @@ for platform in "${platforms[@]}"; do
   done
 done
 echo "::set-output name=matrix::{\"include\":[$(echo "${matrix[@]}" | sed -e 's|} {|}, {|g')]}"
+echo "BUILD_PLATFORM=$platform" >> $GITHUB_ENV
