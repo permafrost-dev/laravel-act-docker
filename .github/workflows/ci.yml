@@ -3,16 +3,20 @@ on:
   push:
   workflow_dispatch:
 jobs:
+
   get-matrix:
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
       - name: output matrix
         id: set-matrix
         run: bash .github/scripts/get-matrix.sh
+
   build:
     needs: get-matrix
     if: "!contains(github.event.head_commit.message, 'skip-build')"
@@ -54,18 +58,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-      - name: Build Multiarch
-        if: matrix.platform == 'multi' && steps.prep.outcome == 'success'
-        uses: docker/build-push-action@v3
-        with:
-          push: true
-          file: ./Dockerfile_${{ matrix.file }}
-          platforms: ${{ steps.prep.outputs.multi }}
-          tags: ${{ steps.prep.outputs.tags }}
-          build-args: ${{ matrix.build_args }}
-          cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,dest=/tmp/.buildx-cache
 
       - name: Build specific arch
         if: matrix.platform != 'multi' && steps.prep.outcome == 'success'

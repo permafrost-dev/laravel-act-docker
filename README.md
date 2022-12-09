@@ -1,10 +1,15 @@
 # laravel-act-docker 
 ## `permafrostsoftware/laravel-node`
 
-<img alt="Build status" src="https://github.com/permafrost-dev/laravel-act-docker/actions/workflows/ci.yml/badge.svg" />
-<img alt="LICENSE" src="https://img.shields.io/badge/license-MIT-428f7e.svg" />
+<img alt="Build status" src="https://github.com/permafrost-dev/laravel-act-docker/actions/workflows/ci.yml/badge.svg" /> <img alt="LICENSE" src="https://img.shields.io/badge/license-MIT-428f7e.svg" /> <img alt="Docker Image Size" src="https://img.shields.io/docker/image-size/permafrostsoftware/laravel-node/latest" />
 
-Docker images to use with `act` when running workflows for Laravel packages and projects.
+Docker images for use with [`nektos/act`](https://github.com/nektos/act) when running workflows for Laravel packages and projects locally.
+
+To use this image with `act`, run a command similar to the following:
+
+```bash
+act -P ubuntu-latest=permafrostsoftware/laravel-node:latest -W .github/workflows/run-tests.yml
+```
 
 ## Namespaces
 
