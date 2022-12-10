@@ -63,12 +63,12 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build specific arch
-        if: matrix.platform != 'multi' && steps.prep.outcome == 'success'
+        if: matrix.platform == 'linux/amd64' && steps.prep.outcome == 'success'
         uses: docker/build-push-action@v3
         with:
           push: true
           file: ./Dockerfile_${{ matrix.file }}
-          platforms: ${{ matrix.platform }}
+          platforms: linux/amd64
           tags: ${{ steps.prep.outputs.ptags }}
           build-args: ${{ matrix.build_args }}
           cache-from: type=local,src=/tmp/.buildx-cache
@@ -117,12 +117,12 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build specific arch
-        if: matrix.platform != 'multi' && steps.prep.outcome == 'success'
+        if: matrix.platform == 'linux/arm64' && steps.prep.outcome == 'success'
         uses: docker/build-push-action@v3
         with:
           push: true
           file: ./Dockerfile_${{ matrix.file }}
-          platforms: ${{ matrix.platform }}
+          platforms: linux/arm64
           tags: ${{ steps.prep.outputs.ptags }}
           build-args: ${{ matrix.build_args }}
           cache-from: type=local,src=/tmp/.buildx-cache
