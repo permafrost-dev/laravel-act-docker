@@ -80,14 +80,11 @@ RUN if [ "$type" = "full" ]; then set -ex \
       && usermod -d /var/lib/mysql/ mysql \
       && add-apt-repository ppa:git-core/ppa -y \
       && LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php \
-      && add-apt-repository ppa:apt-fast/stable -y \
       && apt-get remove software-properties-common -y \
       && apt-get update \
       && cp -r /etc/apt/sources.list.d /etc/apt/sources.list.d.save \
-      && apt-get install -y --no-install-recommends bind9-dnsutils bind9-host bind9-libs dnsutils libjson-c5 liblmdb0 libmaxminddb0 libuv1 aria2
-
-RUN if [ "$type" = "full" ]; then set -ex \
-      && apt-fast install -y --no-install-recommends php8.2 \
+      && apt-get install -y --no-install-recommends bind9-dnsutils bind9-host bind9-libs dnsutils libjson-c5 liblmdb0 libmaxminddb0 libuv1 \
+      && apt-get install -y --no-install-recommends php8.2 \
       php8.2-bcmath \
       php8.2-curl \
       php8.2-dev \
@@ -101,7 +98,7 @@ RUN if [ "$type" = "full" ]; then set -ex \
       php8.2-xml \
       php8.2-zip; \
       for v in 7.2 7.3 7.4 8.0 8.1; do \
-           apt-fast install -y --no-install-recommends php"$v" \
+           apt-get install -y --no-install-recommends php"$v" \
            php"$v"-bcmath \
            php"$v"-curl \
            php"$v"-dev \
