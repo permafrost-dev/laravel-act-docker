@@ -36,7 +36,7 @@ jobs:
         id: prep
         run: bash .github/scripts/prep-environment.sh
         env:
-          PLATFORM: ${{ matrix.platform }}
+          PLATFORM: linux/amd64
           TAGS: ${{ matrix.tags }}
           FILE: ${{ matrix.file }}
 
@@ -90,7 +90,7 @@ jobs:
         id: prep
         run: bash .github/scripts/prep-environment.sh
         env:
-          PLATFORM: ${{ matrix.platform }}
+          PLATFORM: linux/arm64
           TAGS: ${{ matrix.tags }}
           FILE: ${{ matrix.file }}
 
