@@ -135,7 +135,6 @@ RUN if [ "$type" = "full" ]; then set -ex \
       && gcc --version \
       && g++ --version \
       && git --version \
-      && dig --version \
       && php7.2 -v \
       && php7.3 -v \
       && php7.4 -v \
