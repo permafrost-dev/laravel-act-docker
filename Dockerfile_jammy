@@ -85,7 +85,7 @@ RUN if [ "$type" = "full" ]; then set -ex \
       && apt-get update \
       && cp -r /etc/apt/sources.list.d /etc/apt/sources.list.d.save \
       && apt-get install -y --no-install-recommends bind9-dnsutils bind9-host bind9-libs dnsutils libjson-c5 liblmdb0 libmaxminddb0 libuv1 aria2c \
-      && /bin/bash -c "$(curl -sL https://raw.githubusercontent.com/ilikenwf/apt-fast/master/quick-install.sh)" \
+      && sudo add-apt-repository ppa:apt-fast/stable -y && sudo apt-get update && sudo apt-get install apt-fast -y \
       && apt-fast install -y --no-install-recommends php8.2 \
       php8.2-bcmath \
       php8.2-curl \
