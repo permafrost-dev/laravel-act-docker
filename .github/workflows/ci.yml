@@ -22,7 +22,7 @@ jobs:
 
   build-amd64:
     needs: get-matrix
-    if: ${{ !contains(github.event.head_commit.message, 'skip-build') && contains(needs.get-matrix.outputs.matrix, 'linux/amd64') }}
+    if: ${{ !contains(github.event.head_commit.message, 'skip-build') }}
     name: Build amd64
     strategy:
       fail-fast: false
@@ -76,7 +76,7 @@ jobs:
 
   build-arm64:
     needs: get-matrix
-    if: ${{ !contains(github.event.head_commit.message, 'skip-build') && contains(needs.get-matrix.outputs.matrix, 'linux/arm64') }}
+    if: ${{ !contains(github.event.head_commit.message, 'skip-build') }}
     name: Build arm64
     strategy:
       fail-fast: false
